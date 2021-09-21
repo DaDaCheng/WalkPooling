@@ -26,12 +26,14 @@ This code was tested on macOS and Linux.
 ### Parameters
 
 #### Data and sample
-	
+
+`--data-name`: supported data:
+
 1. Without node attributes: USAir NS Power Celegans Router PB Ecoli Yeast
 
 2. With node attributes: cora citeseer pubmed
 
-`--use-splitted`: When it is `True`, we use the splitted data from [SEAL](https://github.com/muhanzhang/SEAL). When it is `False`, we will randomly split train, validation and test data.
+`--use-splitted`: when it is `True`, we use the splitted data from [SEAL](https://github.com/muhanzhang/SEAL). When it is `False`, we will randomly split train, validation and test data.
 
 `--data-split-num`: the index of splitted data when `--use-splitted` is `True`. From 1 to 10.
 
