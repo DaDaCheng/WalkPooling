@@ -8,11 +8,17 @@
 ## Requirements
 
 python>=3.3.7
+
 torch>=1.9.0
+
 torch-cluster>=1.5.9
+
 torch-geometric>d=2.0.0
+
 torch-scatter>=2.0.8
+
 torch-sparse>=0.6.11
+
 tqdm
 
 This code was tested on macOS and Linux.
@@ -58,7 +64,7 @@ This code was tested on macOS and Linux.
 
 `--seed`: random seed. Default is `1`.
 
-`--lr`: learning rate. Default is `0.00005`'.
+`--lr`: learning rate. Default is `0.00005`.
 
 `-heads`: using multi-heads in the attention link weight encoder. Default is `2`.
 
