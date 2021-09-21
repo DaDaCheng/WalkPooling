@@ -367,7 +367,6 @@ def set_init_attribute_representation(data,args):
         if args.init_representation == 'svgae':
             from svgae import CalSVGAE
             data_observed.x, auc, ap = CalSVGAE(edge_index_observed, x, val_and_test, args)
-
         if args.init_representation == 'argva':
             from argva import CalARGVA
             data_observed.x, auc, ap = CalARGVA(edge_index_observed, x, val_and_test, args)

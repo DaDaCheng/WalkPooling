@@ -3,7 +3,7 @@ for name in USAir NS Power Celegans Router PB Ecoli Yeast
 do
    for i in 1 2 3 4 5 6 7 8 9 10
    do
-      sbatch ./dash/r1.sh $i $i $name
+      sbatch ./dash/wo_attr.sh $i $i $name
    done
 done
 
@@ -13,7 +13,7 @@ do
    do
       for i in 1 2 3 4 5 6 7 8 9 10
       do
-         sbatch ./dash/r2.sh $i $i $name $feature
+         sbatch ./dash/w_attr.sh $i $i $name $feature
       done
    done
 done

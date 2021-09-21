@@ -59,12 +59,12 @@ parser.add_argument('--max-nodes-per-hop', type=int, default=None)
 
 #prepare initial node attributes for those graphs do not have
 parser.add_argument('--init-attribute', type=str2none, default='ones',
-                    help='intial attribute for graphs without node attributes\
+                    help='initial attribute for graphs without node attributes\
                     , options: n2v, one_hot, spc, ones, zeros, None')
 
 #prepare initial node representation using unsupservised models 
 parser.add_argument('--init-representation', type=str2none, default= None,
-                    help='options: gic, vgae, argva,svgae, None')
+                    help='options: gic, vgae, argva, None')
 parser.add_argument('--embedding-dim', type=int, default= 32,
                     help='Dimension of the initial node representation, default: 32)')
 
