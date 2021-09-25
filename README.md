@@ -13,7 +13,7 @@ torch>=1.9.0
 
 torch-cluster>=1.5.9
 
-torch-geometric>d=2.0.0
+torch-geometric>=2.0.0
 
 torch-scatter>=2.0.8
 

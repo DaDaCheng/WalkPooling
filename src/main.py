@@ -43,10 +43,11 @@ parser.add_argument('--use-splitted', type=str2bool, default=True,
                      if False, then make a random division')
 parser.add_argument('--data-split-num',type=str, default='10',
                     help='If use-splitted is true, choose one of splitted data')
-parser.add_argument('--test-ratio', type=float, default=0.1,
+parser.add_argument('--test-ratio', type=float, default=0.9,
                     help='ratio of test links')
 parser.add_argument('--val-ratio', type=float, default=0.05,
-                    help='ratio of validation links')
+                    help='ratio of validation links. If using the splitted data from SEAL,\
+                     it is the ratio on the observed links, othewise, it is the ratio on the whole links.')
 parser.add_argument('--practical-neg-sample', type=bool, default = False,
                     help='only see the train positive edges when sampling negative')
 #setups in peparing the training set 

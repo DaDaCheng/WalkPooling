@@ -4,7 +4,7 @@ import torch
 import argparse
 import numpy as np
 import math
-from torch_geometric.utils import to_undirected, from_scipy_sparse_matrix,dense_to_sparse
+from torch_geometric.utils import to_undirected, from_scipy_sparse_matrix,dense_to_sparse,is_undirected
 from torch_geometric.transforms import NormalizeFeatures
 from torch_geometric.datasets import Planetoid
 import torch.nn.functional as F
@@ -215,7 +215,10 @@ def minus_edge(data_observed, label, p_edge, args):
 def load_splitted_data(args):
     par_dir = os.path.abspath(os.path.join(os.path.dirname(__file__),".."))
     data_name=args.data_name+'_split_'+args.data_split_num
-    data_dir = os.path.join(par_dir, 'data/splitted/{}.mat'.format(data_name))
+    if args.test_ratio==0.5:
+        data_dir = os.path.join(par_dir, 'data/splitted_0_5/{}.mat'.format(data_name))
+    else:
+        data_dir = os.path.join(par_dir, 'data/splitted/{}.mat'.format(data_name))
     import scipy.io as sio
     print('Load data from: '+data_dir)
     net = sio.loadmat(data_dir)
