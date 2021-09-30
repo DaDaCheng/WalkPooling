@@ -3,6 +3,7 @@
 
 ## About
 
+This is the source code for ICLR2022 submission _Neural Link Prediction with Walk Pooling_.
 
 
 ## Requirements
@@ -79,7 +80,7 @@ This code was tested on macOS and Linux.
 ## Reproducibility
 
 
-Reproduce the Table 1, 2, 3, 4 in the paper.
+Reproduce Table 1, 2, 3, 4 in the paper.
 
 	./dash/run.sh
 
@@ -87,3 +88,5 @@ Reproduce the Table 1, 2, 3, 4 in the paper.
 
 
 If you find this code useful, please cite our paper:
+
+	ANONYMIZE
