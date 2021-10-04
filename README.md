@@ -5,6 +5,10 @@
 
 This is the source code for ICLR2022 submission _Neural Link Prediction with Walk Pooling_.
 
+![alt text](https://anonymous.4open.science/r/WalkPooling_Ano/wp-illustration-new.pdf "Illustration of Walk Pooling")
+
+
+
 ## Requirements
 
 python>=3.3.7
@@ -58,7 +62,7 @@ This code was tested on macOS and Linux.
 
 `--init-attribute`: the initial attribute for graphs without node attributes. options: `n2v`, `one_hot`, `spc`, `ones`, `zeros`, `None`. Default is `ones`.
 
-`--init-representation`: node feature representation . options:  `gic`, `vgae`, `argva`, None. Default is `None`.
+`--init-representation`: node feature representation . options:  `gic`, `vgae`, `argva`, `None`. Default is `None`.
 
 `--drnl`: whether to use drnl labeling. Default is `False`.
 
