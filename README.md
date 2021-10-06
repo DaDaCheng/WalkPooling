@@ -5,6 +5,8 @@
 
 This is the source code for ICLR2022 submission _Neural Link Prediction with Walk Pooling_.
 
+[ICLR submission](https://openreview.net/forum?id=CCu6RcUMwK0&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2022%2FConference%2FAuthors%23your-submissions))
+
 [Anonymous repo](https://anonymous.4open.science/r/WalkPooling_Ano)
 
 
@@ -91,4 +93,3 @@ Reproduce Table 1, 2, 3, 4 in the paper.
 
 If you find this code useful, please cite our paper:
 
-	ANONYMIZE
