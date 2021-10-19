@@ -9,6 +9,14 @@ This is the source code for ICLR2022 submission _Neural Link Prediction with Wal
 
 [Anonymous repo](https://anonymous.4open.science/r/WalkPooling_Ano)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-cora)](https://paperswithcode.com/sota/link-prediction-on-cora?p=neural-link-prediction-with-walk-pooling-2)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-pubmed)](https://paperswithcode.com/sota/link-prediction-on-pubmed?p=neural-link-prediction-with-walk-pooling-2)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-citeseer)](https://paperswithcode.com/sota/link-prediction-on-citeseer?p=neural-link-prediction-with-walk-pooling-2)
+
 
 ## Requirements
 
