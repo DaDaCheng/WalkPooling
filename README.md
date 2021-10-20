@@ -3,20 +3,9 @@
 
 ## About
 
-This is the source code for ICLR2022 submission _Neural Link Prediction with Walk Pooling_.
+This is the source code for paper _Neural Link Prediction with Walk Pooling_.
 
-[ICLR submission](https://openreview.net/forum?id=CCu6RcUMwK0&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2022%2FConference%2FAuthors%23your-submissions))
-
-[Anonymous repo](https://anonymous.4open.science/r/WalkPooling_Ano)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-cora)](https://paperswithcode.com/sota/link-prediction-on-cora?p=neural-link-prediction-with-walk-pooling-2)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-pubmed)](https://paperswithcode.com/sota/link-prediction-on-pubmed?p=neural-link-prediction-with-walk-pooling-2)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-2/link-prediction-on-citeseer)](https://paperswithcode.com/sota/link-prediction-on-citeseer?p=neural-link-prediction-with-walk-pooling-2)
-
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-1/link-prediction-on-cora)](https://paperswithcode.com/sota/link-prediction-on-cora?p=neural-link-prediction-with-walk-pooling-1)[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-1/link-prediction-on-pubmed)](https://paperswithcode.com/sota/link-prediction-on-pubmed?p=neural-link-prediction-with-walk-pooling-1)[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/neural-link-prediction-with-walk-pooling-1/link-prediction-on-citeseer)](https://paperswithcode.com/sota/link-prediction-on-citeseer?p=neural-link-prediction-with-walk-pooling-1)
 
 ## Requirements
 
