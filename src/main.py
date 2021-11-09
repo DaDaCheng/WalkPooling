@@ -86,6 +86,7 @@ parser.add_argument('--heads', type=int, default=2,
 parser.add_argument('--hidden-channels', type=int, default=32)
 parser.add_argument('--batch-size', type=int, default=32)
 parser.add_argument('--epoch-num', type=int, default=50)
+parser.add_argument('--MSE', type=str2bool, default=False)
 parser.add_argument('--log', type=str, default=None,
                     help='log by tensorboard, default is None')
 
@@ -161,15 +162,21 @@ print("Dimention of features after concatenation:",num_features)
 set_random_seed(args.seed)
 
 model = LinkPred(in_channels = num_features, hidden_channels = hidden_channels,\
-    heads = heads, walk_len = walk_len, drnl = args.drnl,z_max = z_max).to(device)
+    heads = heads, walk_len = walk_len, drnl = args.drnl,z_max = z_max, MSE= args.MSE).to(device)
 
 optimizer = torch.optim.Adam(model.parameters(), lr=lr,weight_decay=weight_decay)
 criterion = torch.nn.MSELoss(reduction='mean')
 
+
+if args.MSE:
+    criterion = torch.nn.MSELoss(reduction='mean')
+else:
+    criterion = torch.nn.BCEWithLogitsLoss()
+
 def train(loader,epoch):
     model.train()
     loss_epoch=0
-    for j,data in  enumerate(loader):  # Iterate in batches over the training dataset.
+    for data in tqdm(loader,desc="train"):  # Iterate in batches over the training dataset.
         data = data.to(device)
         label= data.label
         out = model(data.x, data.edge_index, data.edge_mask, data.batch, data.z)
@@ -183,14 +190,14 @@ def train(loader,epoch):
 
 
 
-def test(loader):
+def test(loader,data_type='test'):
     model.eval()
     scores = torch.tensor([])
     labels = torch.tensor([])
     loss_total=0
     with torch.no_grad():
         #for data in tqdm(loader,position=0,leave=True):  # Iterate in batches over the training/test dataset.
-        for data in loader:  # Iterate in batches over the training/test dataset.
+        for data in tqdm(loader,desc='test:'+data_type):  # Iterate in batches over the training/test dataset.
             data = data.to(device)
             out = model(data.x, data.edge_index, data.edge_mask, data.batch, data.z)
             loss = criterion(out.view(-1), data.label)
@@ -214,8 +221,8 @@ Final_Test_AP_fromAUC=0
 
 for epoch in range(0, args.epoch_num):
     loss_epoch = train(train_loader,epoch)
-    val_auc, val_ap, val_loss = test(val_loader)
-    test_auc,test_ap,_ = test(test_loader)
+    val_auc, val_ap, val_loss = test(val_loader,data_type='val')
+    test_auc,test_ap,_ = test(test_loader,data_type='test')
     if val_loss < Best_Val_fromloss:
         Best_Val_fromloss = val_loss
         Final_Test_AUC_fromloss = test_auc

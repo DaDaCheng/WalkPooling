@@ -12,7 +12,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class LinkPred(MessagePassing):
     def __init__(self, in_channels: int, hidden_channels: int, heads: int = 1,\
-                 walk_len: int = 6, drnl: bool = False, z_max: int =100):
+                 walk_len: int = 6, drnl: bool = False, z_max: int =100, MSE: bool=True):
         super(LinkPred, self).__init__()
 
         self.drnl = drnl
@@ -26,7 +26,7 @@ class LinkPred(MessagePassing):
             hidden_channels, heads, walk_len)
 
         L=walk_len*5+1
-        self.classifier = MLP(L*heads)
+        self.classifier = MLP(L*heads,MSE=MSE)
 
 
     def forward(self, x, edge_index, edge_mask, batch, z = None):
@@ -223,7 +223,7 @@ class WalkPooling(MessagePassing):
 
 class MLP(torch.nn.Module):
     # adopt a MLP as classifier for graphs
-    def __init__(self,input_size):
+    def __init__(self,input_size,MSE=True):
         super(MLP, self).__init__()
         self.nn = nn.BatchNorm1d(input_size)
         self.linear1 = torch.nn.Linear(input_size,input_size*20)
@@ -232,7 +232,7 @@ class MLP(torch.nn.Module):
         self.linear4 = torch.nn.Linear(input_size*10,input_size)
         self.linear5 = torch.nn.Linear(input_size,1)
         self.act= nn.ReLU()
-
+        self.MSE=MSE
     def forward(self, x):
         out= self.nn(x)
         out= self.linear1(out)
@@ -245,5 +245,7 @@ class MLP(torch.nn.Module):
         out = self.act(out)
         out = F.dropout(out, p=0.5, training=self.training)
         out = self.linear5(out)
-        out = torch.sigmoid(out)
+        #out = torch.sigmoid(out)
+        if self.MSE:
+            out = torch.sigmoid(out)
         return out
