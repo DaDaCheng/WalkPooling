@@ -83,7 +83,7 @@ This code was tested on macOS and Linux.
 
 Reproduce Table 1, 2, 3, 4 in the paper.
 
-	./dash/run.sh
+	./bash/run.sh
 
 ## Reference
 
