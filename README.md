@@ -88,5 +88,14 @@ Reproduce Table 1, 2, 3, 4 in the paper.
 ## Reference
 
 
-If you find this code useful, please cite our paper:
+If you find our work useful in your research, please cite our paper:
+
+```
+@article{pan2021neural,
+  title={Neural Link Prediction with Walk Pooling},
+  author={Pan, Liming and Shi, Cheng and Dokmani{\'c}, Ivan},
+  journal={arXiv preprint arXiv:2110.04375},
+  year={2021}
+}
+```
 
